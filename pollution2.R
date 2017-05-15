@@ -5,15 +5,12 @@ pollutantmean2<-function(directory, pollutant, id=1:332){
                 x<-read.csv(fname)
                 if(i==1){
                         answervec<-as.vector(x[pollutant])
+                        answervec2<-answervec[!is.na(answervec)]
                 }else{z<-as.vector(x[pollutant])
                         z2<-z[!is.na(z)]
-                        answervec<-c(answervec, z)
+                        answervec2<-c(answervec2, z2)
                 }
                                 
         } 
-        ##bad<-is.na(answervec)
-        ##out<-mean(as.numeric(answervec[!bad]))
-        ##out<-mean(answervec, na.rm=TRUE)
-        ##answ<-answervec[!is.na(answervec)]
-       answ<-apply(answ,function(x) mean(x),na.rm=TRUE)
+        mean(answervec2)
 }
