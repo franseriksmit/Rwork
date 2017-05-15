@@ -11,9 +11,9 @@ pollutantmean2<-function(directory, pollutant, id=1:332){
                 }
                                 
         } 
-        ##bad<-is.na(answervec)
+        bad<-is.na(answervec)
         ##out<-mean(as.numeric(answervec[!bad]))
         ##out<-mean(answervec, na.rm=TRUE)
-        ##answ<-answervec[!is.na(answervec)]
-       answ<-apply(answ,function(x) mean(x),na.rm=TRUE)
+        answ<-answervec[!is.na(answervec)]
+       answ
 }
